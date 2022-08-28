@@ -1,0 +1,63 @@
+<meta charset="UTF-8">
+
+estoy definiendo la edad de Christian
+
+<script>
+
+    function saltarLinea() {
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+
+    function imprimir(frase){
+        document.write(frase)
+        saltarLinea();
+    }
+
+    var anio = 2022;
+    var miedad = 2022;
+    var saltoLinea = "<br><br>";
+
+    imprimir("una frase");
+
+    document.write("Juan tiene: " + (anio-2000) + "años.")
+    saltarLinea();
+
+    document.write("Pedro tiene: " + (anio-1995) + "años.")
+    saltarLinea();
+
+    document.write("Carlos tiene: " + (anio-2005) + "años.")
+    saltarLinea();
+
+    document.write("Este es un texto de prueba para concatenarlo con un número cualquiera: "+24)
+    document.write("Usamos HTML dentro de JavaScript<br>")
+    document.write("Porque aunque se pueda escribir fuera de JS es mejor acá, para tener un código más dinámico <br>")
+    anio = 2020
+
+    saltarLinea();
+
+
+    document.write("Jimena tiene: " + (anio-2010)+"años");
+    saltarLinea();
+
+    document.write("Paola tiene: " + (anio-1995)+"años");
+    document.write(saltoLinea)
+
+    document.write("Laura tiene: " + (anio-2005)+"años");
+    saltarLinea();
+    
+    var edadJimena = 10;
+    var edadPaola = 25;
+    var edadLaura = 15;
+    
+    var nombre1 = "Jimena";
+    var nombre2 = "Paola";
+    var nombre3 = "Laura";
+
+    promedio = (edadJimena + edadPaola + edadLaura)/3
+
+    document.write("El promedio de las edades de: " + nombre1 + ", " + nombre2 + " y " + nombre3 + " es: " + Math.round(promedio));
+
+
+</script>

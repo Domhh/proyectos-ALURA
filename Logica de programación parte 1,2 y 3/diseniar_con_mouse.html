@@ -1,0 +1,76 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paint noob</title>
+</head>
+<body>
+    <canvas width="600" height="400"></canvas>
+
+<script>
+    var pantalla = document.querySelector('canvas');
+    var pincel = pantalla.getContext('2d');
+    pincel.fillStyle = 'grey';
+    pincel.fillRect(0, 0, 600, 400);
+
+    var puedoDibujar = false;
+    var colorActual = "blue";
+    var colores=["red","green","blue"];
+
+    function dibujarCirculo(evento) {
+
+        if(puedoDibujar) {
+            var x = evento.pageX - pantalla.offsetLeft;
+            var y = evento.pageY - pantalla.offsetTop;
+            if((x>0)&&(x<=150)&&(y>0)&&(y<=50)){
+                deshabilitarDibujar();
+            }else{
+                pincel.fillStyle = colorActual;
+                pincel.beginPath();
+                pincel.arc(x, y, 5, 0, 2 * 3.14);
+                pincel.fill();
+            }
+        }
+    }
+    function habilitarDibujar() {
+        puedoDibujar = true;
+    }
+
+    function deshabilitarDibujar() {
+        puedoDibujar = false;
+    }
+    function crearCuadros(x,y,color){
+        pincel.fillStyle=color;
+        pincel.fillRect(x,y, 50,50);
+        pincel.strokeStyle = "black";
+        pincel.strokeRect(x,y,50,50);
+    }
+    function cambiarColor(evento){
+        var x = evento.pageX - pantalla.offsetLeft;
+        var y = evento.pageY - pantalla.offsetTop;
+
+        if((x<50)&&(x>0)&&
+        (y<50)&&(y>0)){
+            colorActual=colores[0];
+        }else if((x<100)&&(x>50)&&
+        (y<50)&&(y>0)){
+            colorActual=colores[1];
+        }else if((x<150)&&(x>50)&&
+        (y<50)&&(y>0)){
+            colorActual=colores[2];
+        }
+    }
+    crearCuadros(0,0,colores[0]);
+    crearCuadros(50,0,colores[1]);
+    crearCuadros(100,0,colores[2]);
+
+    pantalla.onmousemove = dibujarCirculo;
+    pantalla.onclick = cambiarColor;
+    pantalla.onmousedown = habilitarDibujar;
+    pantalla.onmouseup = deshabilitarDibujar;
+
+</script>
+</body>
+</html>
+

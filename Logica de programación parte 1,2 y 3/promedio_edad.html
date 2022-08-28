@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<h3>Promedio de edades con mis hermanos</h3>
+<br>
+<script>
+    function saltarLinea(){
+        document.write("<br>");
+        document.write("<br>");
+        document.write("<br>");
+    }
+    function imprimir(frase){
+        saltarLinea();
+        document.write(frase);
+        saltarLinea();
+    }
+    
+    var brian = 23;
+    var talia = 18;
+    var benja = 13;
+
+    var promedio = (brian + talia + benja)/3;
+
+    imprimir("Nuestro promedio de edad es: " + promedio);
+</script>

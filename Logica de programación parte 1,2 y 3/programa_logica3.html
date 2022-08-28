@@ -1,0 +1,44 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="600" height="400">
+        
+    </canvas>
+        
+    <script>
+
+        //enlazamos la etiqueta canvas html con js para crear la pizarra de trazar
+        var pantalla = document.querySelector("canvas");
+        //se crea la herramienta de trazo
+        var pincel = pantalla.getContext("2d");
+
+        //se dimensionan los 3 colores que forman una bandera
+        pincel.fillStyle = "lightgrey"; //propiedad
+        pincel.fillRect(0,0,600,400); //función
+        
+        pincel.fillStyle = "green"; //propiedad
+        pincel.fillRect(0,0,200,400); //función
+
+        pincel.fillStyle = "red"; //propiedad
+        pincel.fillRect(400,0,200,400); //función
+
+        //se dibuja el triangulo
+        pincel.fillStyle = "yellow"; //propiedad
+        pincel.beginPath(); //se inicia un nuevo trazo
+        pincel.moveTo(300,200);
+        pincel.lineTo(200,400);
+        pincel.lineTo(400,400);
+        pincel.fill(); //se rellena la figura dimensionada
+
+        pincel.fillStyle = "blue"//propiedad
+        pincel.beginPath();
+        pincel.arc(300,200,50,0,2*3.14); //se dimensiona una circunferencia
+        pincel.fill();
+    </script>
+</body>
+</html>

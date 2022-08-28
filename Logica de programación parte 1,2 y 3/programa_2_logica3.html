@@ -1,0 +1,40 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas width="6000" height="4000">
+        
+    </canvas>
+        
+    <script>
+
+        //Este algoritmo crea cuadros verdes, de acuerdo a la petición del usuario, con un límite de 12 cuadros(para aumentar la cantidad redimensionar canvas)
+
+        var cantidad = prompt("Cuantos cuadros desea crear?");
+        
+
+        function crear_cuadro(x, y, color){ 
+                    var pantalla = document.querySelector("canvas");
+                    var pincel = pantalla.getContext("2d");
+                    pincel.fillStyle = color;
+                    pincel.fillRect(x,y,50,50);
+                    pincel.strokeStyle = "black";
+                    pincel.strokeRect(x,y,50,50);
+        }
+        
+        var numero_x = 0;
+        var numero_y = 0;
+        var veces_repetido = 0;
+        while(veces_repetido < cantidad){
+            crear_cuadro(numero_x, numero_y, "green");
+            numero_x = numero_x + 50;
+            veces_repetido++;
+        }
+s
+    </script>
+</body>
+</html>
